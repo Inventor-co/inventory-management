@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    @apply bg-ink-950 text-white font-body;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #1A1A24;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #32324A;
+    border-radius: 2px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #C8FF00;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-ink-800 border border-ink-600 rounded-2xl;
+  }
+
+  .btn-primary {
+    @apply bg-volt-400 text-ink-950 font-display font-700 px-5 py-2.5 rounded-xl
+           hover:bg-volt-500 transition-all duration-200 active:scale-95 text-sm;
+  }
+
+  .btn-ghost {
+    @apply border border-ink-600 text-slate-400 px-4 py-2.5 rounded-xl
+           hover:border-volt-400 hover:text-volt-400 transition-all duration-200 text-sm;
+  }
+
+  .btn-danger {
+    @apply bg-red-500/10 text-red-400 border border-red-500/20 px-4 py-2.5 rounded-xl
+           hover:bg-red-500/20 transition-all duration-200 text-sm;
+  }
+
+  .input {
+    @apply w-full bg-ink-900 border border-ink-600 rounded-xl px-4 py-2.5 text-white
+           placeholder:text-slate-500 focus:outline-none focus:border-volt-400
+           transition-colors duration-200 font-body text-sm;
+  }
+
+  .label {
+    @apply block text-xs font-display font-600 text-slate-400 uppercase tracking-widest mb-1.5;
+  }
+
+  .badge-green {
+    @apply inline-flex items-center gap-1 bg-emerald-500/10 text-emerald-400 
+           border border-emerald-500/20 px-2.5 py-0.5 rounded-full text-xs font-mono;
+  }
+
+  .badge-yellow {
+    @apply inline-flex items-center gap-1 bg-amber-500/10 text-amber-400 
+           border border-amber-500/20 px-2.5 py-0.5 rounded-full text-xs font-mono;
+  }
+
+  .badge-red {
+    @apply inline-flex items-center gap-1 bg-red-500/10 text-red-400 
+           border border-red-500/20 px-2.5 py-0.5 rounded-full text-xs font-mono;
+  }
+
+  .badge-blue {
+    @apply inline-flex items-center gap-1 bg-blue-500/10 text-blue-400 
+           border border-blue-500/20 px-2.5 py-0.5 rounded-full text-xs font-mono;
+  }
+}
+
+@layer utilities {
+  .font-600 { font-weight: 600; }
+  .font-700 { font-weight: 700; }
+  .font-800 { font-weight: 800; }
+}
+
+/* Fade-in animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  animation: fadeUp 0.4s ease forwards;
+}
+
+.fade-up-delay-1 { animation-delay: 0.05s; opacity: 0; animation-fill-mode: forwards; }
+.fade-up-delay-2 { animation-delay: 0.1s; opacity: 0; animation-fill-mode: forwards; }
+.fade-up-delay-3 { animation-delay: 0.15s; opacity: 0; animation-fill-mode: forwards; }
+.fade-up-delay-4 { animation-delay: 0.2s; opacity: 0; animation-fill-mode: forwards; }
